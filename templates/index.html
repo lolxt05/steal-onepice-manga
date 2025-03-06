@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manga Chapters</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .chapter-list { list-style: none; padding: 0; }
+        .chapter-item { margin: 10px 0; }
+        .chapter-link { 
+            text-decoration: none; 
+            color: #2c3e50;
+            font-size: 1.2em;
+            padding: 8px 15px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        .chapter-link:hover {
+            background: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Available Chapters</h1>
+    <ul class="chapter-list">
+        {% for chapter in chapters %}
+        <li class="chapter-item">
+            <a href="/read/{{ chapter }}" class="chapter-link">
+                Chapter {{ chapter }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
