@@ -1,0 +1,18 @@
+services:
+  onepiece-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    ports:
+      - 1234:1234
+    volumes:
+      - ./downloads:/app/downloads
+    container_name: steal-the-onepiece-ui
+    
+  onepiece-controller:
+    build:
+      context: .
+      dockerfile: Dockerfile.controller
+    volumes:
+      - ./downloads:/app/downloads
+    container_name: steal-the-onepiece-controller
